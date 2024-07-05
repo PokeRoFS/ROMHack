@@ -4,13 +4,10 @@ InsideOfTruck_MapScripts::
 	.byte 0
 
 InsideOfTruck_OnLoad:
-	setmetatile 4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE
-	setmetatile 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE
-	setmetatile 4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE
+	setvar VAR_DREAM_STATE, 0
 	end
 
 InsideOfTruck_OnResume:
-	setstepcallback STEP_CB_TRUCK
 	end
 
 InsideOfTruck_EventScript_SetIntroFlags::
@@ -47,12 +44,16 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	releaseall
 	end
 
-InsideOfTruck_EventScript_MovingBox::
-	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+InsideOfTruck_EventScript_HavingFun_Confusion::
+	lock
+	msgbox InsideOfTruck_Confused, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_DREAM_STATE, 1
+	release
 	end
 
-InsideOfTruck_Text_BoxPrintedWithMonLogo:
-	.string "The box is printed with a POKéMON logo.\p"
-	.string "It's a POKéMON brand moving and\n"
-	.string "delivery service.$"
-
+InsideOfTruck_Confused:
+	.string "Woah... what was that?\p"
+	.string "One second I'm gaming,\p"
+	.string "The next there's an\n"
+	.string "earthquake?$"
