@@ -77,7 +77,6 @@ LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 	lockall
 	setvar VAR_0x8004, LOCALID_MOM
 	setvar VAR_0x8005, FEMALE
-	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
@@ -153,7 +152,6 @@ LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
 	setvar VAR_0x8005, FEMALE
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	goto PlayersHouse_1F_EventScript_MomGoSeeRoom
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_MeetRival0::
@@ -200,8 +198,6 @@ LittlerootTown_MaysHouse_1F_EventScript_MeetRival::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	delay 30
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
@@ -372,7 +368,7 @@ RivalsHouse_1F_Text_MayWhoAreYou:
 	.string "I have this dream of becoming friends\l"
 	.string "with POKéMON all over the world.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
-	.string "my dad, PROF. BIRCH.\p"
+	.string "my dad, MR. HARSHBARGER.\p"
 	.string "I was hoping that you would be nice,\n"
 	.string "{PLAYER}{KUN}, and that we could be friends.\p"
 	.string "Oh, this is silly, isn't it?\n"
@@ -390,7 +386,7 @@ RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Oh, you're {PLAYER}, aren't you?\n"
 	.string "Moved in next door, right?\p"
 	.string "I didn't know that you're a girl.\p"
-	.string "Dad, PROF. BIRCH, said that our new\n"
+	.string "Dad, MR. HARSHBARGER, said that our new\n"
 	.string "next-door neighbor is a GYM LEADER's\l"
 	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's BRENDAN.\n"

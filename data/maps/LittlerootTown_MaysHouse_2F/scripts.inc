@@ -70,10 +70,8 @@ LittlerootTown_MaysHouse_2F_EventScript_MeetMay::
 	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_MaysHouse_2F_EventScript_MeetMaySouth
 	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_MaysHouse_2F_EventScript_MeetMayWest
 	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_MaysHouse_2F_EventScript_MeetMayEast
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
@@ -323,7 +321,7 @@ RivalsHouse_2F_Text_MayWhoAreYou:
 	.string "I have this dream of becoming friends\l"
 	.string "with POKéMON all over the world.\p"
 	.string "I… I heard about you, {PLAYER}{KUN}, from\n"
-	.string "my dad, PROF. BIRCH.\p"
+	.string "my dad, MR. HARSHBARGER.\p"
 	.string "I was hoping that you would be nice,\n"
 	.string "{PLAYER}{KUN}, and that we could be friends.\p"
 	.string "Oh, this is silly, isn't it?\n"
@@ -345,7 +343,7 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Oh, you're {PLAYER}, aren't you?\n"
 	.string "Moved in next door, right?\p"
 	.string "I didn't know that you're a girl.\p"
-	.string "Dad, PROF. BIRCH, said that our new\n"
+	.string "Dad, MR. HARSHBARGER, said that our new\n"
 	.string "next-door neighbor is a GYM LEADER's\l"
 	.string "kid, so I assumed you'd be a guy.\p"
 	.string "My name's BRENDAN.\n"

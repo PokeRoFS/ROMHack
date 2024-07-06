@@ -2544,7 +2544,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Buneary)
         .levelUpLearnset = sBunearyLevelUpLearnset,
         .teachableLearnset = sBunearyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_LOPUNNY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_LOPUNNY}),
     },
 
     [SPECIES_LOPUNNY] =
@@ -3381,7 +3381,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         FOOTPRINT(Riolu)
         .levelUpLearnset = sRioluLevelUpLearnset,
         .teachableLearnset = sRioluTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP_DAY, 0, SPECIES_LUCARIO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_LUCARIO}),
     },
 
     [SPECIES_LUCARIO] =

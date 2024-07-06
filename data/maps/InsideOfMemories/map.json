@@ -16,10 +16,10 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
-      "x": 14,
+      "x": 16,
       "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -29,10 +29,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
-      "x": 5,
+      "x": 3,
       "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -71,7 +71,60 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "1",
+      "script": "InsideOfMemories_EventScript_Memory1"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "1",
+      "script": "InsideOfMemories_EventScript_Memory1"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "2",
+      "script": "InsideOfMemories_EventScript_Memory2"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "2",
+      "script": "InsideOfMemories_EventScript_Memory2"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "3",
+      "script": "InsideOfMemories_EventScript_Memory3"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_DREAM_STATE",
+      "var_value": "3",
+      "script": "InsideOfMemories_EventScript_Memory3"
+    }
   ],
   "bg_events": [
 
