@@ -1587,6 +1587,8 @@ static void Task_PCMainMenu(u8 taskId)
             ScriptContext_Enable();
             RemoveWindow(task->tWindowId);
             DestroyTask(taskId);
+            EraseFieldMessageBox(FALSE);
+            SetMainCallback2(CB2_ReturnToField);
             break;
         default:
             if (task->tInput == OPTION_WITHDRAW && CountPartyMons() == PARTY_SIZE)
@@ -1662,7 +1664,7 @@ void ShowPokemonStorageSystemPC(void)
     LockPlayerFieldControls();
 }
 
-void FieldTask_ReturnToPcMenu(void)
+static void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;

@@ -665,7 +665,6 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback
-            && gMenuCallback != StartMenuPokePCCallback
             && gMenuCallback != StartMenuPokeVialCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
@@ -737,6 +736,7 @@ static bool8 StartMenuPokeVialCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
+        PlaySE(SE_USE_ITEM);
         SetMainCallback2(CB2_InitPokeVial);  // Use PokeVial
 
         return TRUE;
@@ -745,6 +745,7 @@ static bool8 StartMenuPokeVialCallback(void)
     return FALSE;
 }
 
+
 static bool8 StartMenuPokePCCallback(void)
 {
     if (!gPaletteFade.active)
@@ -752,13 +753,10 @@ static bool8 StartMenuPokePCCallback(void)
         PlayRainStoppingSoundEffect();
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
-        if(!ScriptContext_IsEnabled()) {
-            // SetMainCallback2(ReturnToFieldOpenStartMenu);
-            // return FALSE;
-        }
-        ScriptContext_SetupScript(ShowPokemonStorageSystem);
-        ScriptContext_RunScript();
-        // SetMainCallback2(CB2_PCFromStartMenu);  // Display PokéPC
+        EnterPokeStorage(2);
+        LockPlayerFieldControls();
+        FreeAllOverworldWindowBuffers();
+        RunTasks();
 
         return TRUE;
     }
