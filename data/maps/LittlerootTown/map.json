@@ -178,11 +178,11 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 7,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "4",
+      "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4"
     },
     {

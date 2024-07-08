@@ -14,6 +14,7 @@
 #include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "field_specials.h"
+#include "fldeff_misc.h"
 #include "graphics.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
@@ -34,9 +35,11 @@
 #include "party_menu.h"
 #include "player_pc.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "script_menu.h"
 #include "shop.h"
 #include "sound.h"
 #include "sprite.h"
@@ -565,6 +568,10 @@ void CB2_BagMenuFromStartMenu(void)
     GoToBagMenu(ITEMMENULOCATION_FIELD, POCKETS_COUNT, CB2_ReturnToFieldWithOpenMenu);
 }
 
+// void CB2_PCFromStartMenu(void) {
+//     GoToViewPC();
+// }
+
 void CB2_BagMenuFromBattle(void)
 {
     if (!InBattlePyramid())
@@ -649,6 +656,22 @@ void GoToBagMenu(u8 location, u8 pocket, void ( *exitCallback)())
         SetMainCallback2(CB2_Bag);
     }
 }
+
+void GoToUsePokeVial(void ( *exitCallback)())
+{
+    LockPlayerFieldControls();
+    u32 i;
+    for (i = 0; i < gPlayerPartyCount; i++)
+        HealPokemon(&gPlayerParty[i]);
+    SetMainCallback2(exitCallback);
+}
+
+// void GoToViewPC()
+// {
+//     LockPlayerFieldControls();
+//     ScriptContext_SetupScript(EventScript_PC);
+//     ScriptContext_RunScript();
+// }
 
 void CB2_BagMenuRun(void)
 {

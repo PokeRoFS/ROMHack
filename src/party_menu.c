@@ -74,6 +74,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "script_pokemon_util.h"
 
 enum {
     MENU_SUMMARY,
@@ -6745,6 +6746,11 @@ static void TryTutorSelectedMon(u8 taskId)
         DisplayLearnMoveMessage(gText_PkmnNeedsToReplaceMove);
         gTasks[taskId].func = Task_ReplaceMoveYesNo;
     }
+}
+
+void CB2_InitPokeVial(void)
+{
+    GoToUsePokeVial(CB2_ReturnToFieldWithOpenMenu);
 }
 
 void CB2_PartyMenuFromStartMenu(void)

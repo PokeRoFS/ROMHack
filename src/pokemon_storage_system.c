@@ -1662,7 +1662,7 @@ void ShowPokemonStorageSystemPC(void)
     LockPlayerFieldControls();
 }
 
-static void FieldTask_ReturnToPcMenu(void)
+void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
     MainCallback vblankCb = gMain.vblankCallback;

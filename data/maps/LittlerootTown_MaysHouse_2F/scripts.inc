@@ -365,7 +365,7 @@ RivalsHouse_2F_Text_ItsRivalsPokeBall:
 	.string "Better leave it right where it is.$"
 
 RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
-	.string "MAY: {PLAYER}{KUN}!\p"
+	.string "{RIVAL}: {PLAYER}{KUN}!\p"
 	.string "I was just checking my POKéDEX.\p"
 	.string "There's still a lot of POKéMON that\n"
 	.string "I've seen but haven't caught.\p"
@@ -375,7 +375,7 @@ RivalsHouse_2F_Text_MayJustCheckingMyPokedex:
 	.string "some POKéMON next?$"
 
 RivalsHouse_2F_Text_MayWhereShouldIGoNext:
-	.string "MAY: I wonder where I should go catch\n"
+	.string "{RIVAL}: I wonder where I should go catch\n"
 	.string "some POKéMON next?\p"
 	.string "Wouldn't it be funny if we ran into each\n"
 	.string "other, {PLAYER}{KUN}?$"

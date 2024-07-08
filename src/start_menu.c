@@ -54,6 +54,8 @@ enum
     MENU_ACTION_POKEDEX,
     MENU_ACTION_POKEMON,
     MENU_ACTION_BAG,
+    MENU_ACTION_POKEVIAL,
+    MENU_ACTION_POKEPC,
     MENU_ACTION_POKENAV,
     MENU_ACTION_PLAYER,
     MENU_ACTION_SAVE,
@@ -96,6 +98,8 @@ EWRAM_DATA static u8 sSaveInfoWindowId = 0;
 static bool8 StartMenuPokedexCallback(void);
 static bool8 StartMenuPokemonCallback(void);
 static bool8 StartMenuBagCallback(void);
+static bool8 StartMenuPokeVialCallback(void);
+static bool8 StartMenuPokePCCallback(void);
 static bool8 StartMenuPokeNavCallback(void);
 static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
@@ -189,6 +193,8 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
     [MENU_ACTION_POKEMON]         = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
     [MENU_ACTION_BAG]             = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
+    [MENU_ACTION_POKEVIAL]        = {gText_MenuPokeVial, {.u8_void = StartMenuPokeVialCallback}},
+    [MENU_ACTION_POKEPC]          = {gText_MenuPokePC, {.u8_void = StartMenuPokePCCallback}},
     [MENU_ACTION_POKENAV]         = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
     [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
@@ -336,6 +342,12 @@ static void BuildNormalStartMenu(void)
 
     AddStartMenuAction(MENU_ACTION_BAG);
 
+    if (FlagGet(FLAG_RESCUED_BIRCH) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_POKEVIAL);
+        AddStartMenuAction(MENU_ACTION_POKEPC);
+    }
+
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKENAV);
@@ -355,6 +367,11 @@ static void BuildDebugStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
     AddStartMenuAction(MENU_ACTION_BAG);
+    if (FlagGet(FLAG_RESCUED_BIRCH) == TRUE)
+    {
+        AddStartMenuAction(MENU_ACTION_POKEVIAL);
+        AddStartMenuAction(MENU_ACTION_POKEPC);
+    }
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
     AddStartMenuAction(MENU_ACTION_PLAYER);
@@ -367,6 +384,8 @@ static void BuildSafariZoneStartMenu(void)
     AddStartMenuAction(MENU_ACTION_RETIRE_SAFARI);
     AddStartMenuAction(MENU_ACTION_POKEDEX);
     AddStartMenuAction(MENU_ACTION_POKEMON);
+    AddStartMenuAction(MENU_ACTION_POKEVIAL);
+    AddStartMenuAction(MENU_ACTION_POKEPC);
     AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
@@ -645,7 +664,9 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && gMenuCallback != StartMenuPokePCCallback
+            && gMenuCallback != StartMenuPokeVialCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -702,6 +723,42 @@ static bool8 StartMenuBagCallback(void)
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_BagMenuFromStartMenu); // Display bag menu
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuPokeVialCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_InitPokeVial);  // Use PokeVial
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuPokePCCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        if(!ScriptContext_IsEnabled()) {
+            // SetMainCallback2(ReturnToFieldOpenStartMenu);
+            // return FALSE;
+        }
+        ScriptContext_SetupScript(ShowPokemonStorageSystem);
+        ScriptContext_RunScript();
+        // SetMainCallback2(CB2_PCFromStartMenu);  // Display PokéPC
 
         return TRUE;
     }
