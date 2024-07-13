@@ -8,7 +8,6 @@ InsideOfMemories_MapScripts::
 	.byte 0
 
 InsideOfMemories_OnLoad:
-	setvar VAR_DREAM_STATE, 1
 	end
 
 InsideOfMemories_OnResume:
@@ -21,8 +20,8 @@ InsideOfMemories_EventScript_Memory1::
 	applymovement LOCALID_MEMORY1, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox InsideOfMemories_Memory1_Script, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_DREAM_STATE, 2
+	waitmessage
+	setvar VAR_LITTLEROOT_INTRO_STATE, 2
 	release
 	end
 
@@ -31,8 +30,8 @@ InsideOfMemories_EventScript_Memory2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox InsideOfMemories_Memory2_Script, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_DREAM_STATE, 3
+	waitmessage
+	setvar VAR_LITTLEROOT_INTRO_STATE, 3
 	release
 	end
 
@@ -44,9 +43,9 @@ InsideOfMemories_EventScript_Memory3::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	msgbox InsideOfMemories_What_Script, MSGBOX_DEFAULT
-	closemessage
+	waitmessage
 	setvar VAR_LITTLEROOT_INTRO_STATE, 4
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
 	setvar VAR_LITTLEROOT_TOWN_STATE, 3
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM

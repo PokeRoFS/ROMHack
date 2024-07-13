@@ -2833,6 +2833,7 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     s64 numExpProgressBarTicks;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u16 *dst;
+    u16 *dst2;
     u8 i;
 
     if (summary->level < MAX_LEVEL)
@@ -2853,18 +2854,25 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     }
 
     dst = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][0x255];
+    dst2 = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_IVs][1][0x255];
     for (i = 0; i < 8; i++)
     {
         if (numExpProgressBarTicks > 7)
+        {
             dst[i] = 0x206A;
-        else
+            dst2[i] = 0x206A;
+        }
+        else 
+        {
             dst[i] = 0x2062 + (numExpProgressBarTicks % 8);
+            dst2[i] = 0x2062 + (numExpProgressBarTicks % 8);
+        }
         numExpProgressBarTicks -= 8;
         if (numExpProgressBarTicks < 0)
             numExpProgressBarTicks = 0;
     }
 
-    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
+    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0] || GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_IVs][0])
         ScheduleBgCopyTilemapToVram(1);
     else
         ScheduleBgCopyTilemapToVram(2);

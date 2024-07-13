@@ -76,7 +76,7 @@
       "x": 9,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "1",
       "script": "InsideOfMemories_EventScript_Memory1"
     },
@@ -85,7 +85,7 @@
       "x": 10,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "1",
       "script": "InsideOfMemories_EventScript_Memory1"
     },
@@ -94,7 +94,7 @@
       "x": 9,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "2",
       "script": "InsideOfMemories_EventScript_Memory2"
     },
@@ -103,7 +103,7 @@
       "x": 10,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "2",
       "script": "InsideOfMemories_EventScript_Memory2"
     },
@@ -112,7 +112,7 @@
       "x": 9,
       "y": 4,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "3",
       "script": "InsideOfMemories_EventScript_Memory3"
     },
@@ -121,7 +121,7 @@
       "x": 10,
       "y": 4,
       "elevation": 0,
-      "var": "VAR_DREAM_STATE",
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "3",
       "script": "InsideOfMemories_EventScript_Memory3"
     }

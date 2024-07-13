@@ -4,7 +4,6 @@ InsideOfTruck_MapScripts::
 	.byte 0
 
 InsideOfTruck_OnLoad:
-	setvar VAR_DREAM_STATE, 0
 	end
 
 InsideOfTruck_OnResume:
@@ -46,14 +45,13 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 
 InsideOfTruck_EventScript_HavingFun_Confusion::
 	lock
+	setvar VAR_LITTLEROOT_INTRO_STATE, 1
 	msgbox InsideOfTruck_Confused, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_DREAM_STATE, 1
+	waitmessage
 	release
-	end
+	return
 
 InsideOfTruck_Confused:
 	.string "Woah... what was that?\p"
 	.string "One second I'm gaming,\p"
-	.string "The next there's an\n"
-	.string "earthquake?$"
+	.string "The next there's an earthquake?$"

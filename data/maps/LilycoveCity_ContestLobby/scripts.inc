@@ -319,7 +319,6 @@ LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
 	special ClearLinkContestFlags
 	specialvar VAR_RESULT, IsContestDebugActive  @ Always FALSE
 	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_SetDebug
-	call LilycoveCity_ContestLobby_EventScript_SpeakToContestReceptionist
 	call LilycoveCity_ContestLobby_EventScript_LeadToContestHall
 	special SetContestTrainerGfxIds
 	call LilycoveCity_ContestLobby_EventScript_SetPlayerGfx

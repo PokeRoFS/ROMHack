@@ -297,6 +297,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_INF_CANDY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_INF_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_INF_REPEL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_INF_REPEL"
     }
   ],
   "warp_events": [

@@ -71,8 +71,10 @@ static void Task_ShowTMHMContainedMessage(u8);
 static void UseTMHMYesNo(u8);
 static void UseTMHM(u8);
 static void Task_StartUseRepel(u8);
+static void Task_StartUseInfRepel(u8);
 static void Task_StartUseLure(u8 taskId);
 static void Task_UseRepel(u8);
+static void Task_UseInfRepel(u8);
 static void Task_UseLure(u8 taskId);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
@@ -926,6 +928,11 @@ void ItemUseOutOfBattle_Repel(u8 taskId)
         DisplayItemMessageInBattlePyramid(taskId, gText_RepelEffectsLingered, Task_CloseBattlePyramidBagMessage);
 }
 
+void ItemUseOutOfBattle_InfRepel(u8 taskId)
+{
+    gTasks[taskId].func = Task_StartUseInfRepel;
+}
+
 static void Task_StartUseRepel(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -935,6 +942,18 @@ static void Task_StartUseRepel(u8 taskId)
         data[8] = 0;
         PlaySE(SE_REPEL);
         gTasks[taskId].func = Task_UseRepel;
+    }
+}
+
+static void Task_StartUseInfRepel(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    if (++data[8] > 7)
+    {
+        data[8] = 0;
+        PlaySE(SE_REPEL);
+        gTasks[taskId].func = Task_UseInfRepel;
     }
 }
 
@@ -953,6 +972,30 @@ static void Task_UseRepel(u8 taskId)
             DisplayItemMessageInBattlePyramid(taskId, gStringVar4, Task_CloseBattlePyramidBagMessage);
     }
 }
+
+static void Task_UseInfRepel(u8 taskId)
+{
+    if (!IsSEPlaying())
+    {
+        if (FlagGet(FLAG_INF_REPEL)) {
+            FlagClear(FLAG_INF_REPEL);
+        } else {
+            FlagSet(FLAG_INF_REPEL);
+        }
+    #if VAR_LAST_REPEL_LURE_USED != 0
+        VarSet(VAR_LAST_REPEL_LURE_USED, gSpecialVar_ItemId);
+    #endif
+        if (!InBattlePyramid())
+            if (FlagGet(FLAG_INF_REPEL)) {
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_StartInfRepel, CloseItemMessage);
+            } else {
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_EndInfRepel, CloseItemMessage);
+            }
+        else
+            DisplayItemMessageInBattlePyramid(taskId, gStringVar4, Task_CloseBattlePyramidBagMessage);
+    }
+}
+
 void HandleUseExpiredRepel(struct ScriptContext *ctx)
 {
 #if VAR_LAST_REPEL_LURE_USED != 0

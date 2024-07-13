@@ -301,6 +301,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_WakeUp::
 	lock
 	msgbox LittlerootTown_BrendansHouse_2F_DozedOff, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
 	msgbox LittlerootTown_BrendansHouse_2F_ClocksOff, MSGBOX_DEFAULT
 	closemessage
 	release

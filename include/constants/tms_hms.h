@@ -5,21 +5,21 @@
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
     F(WATER_PULSE) \
-    F(CALM_MIND) \
-    F(ROAR) \
+    F(PSYCHIC_FANGS) \
+    F(AGILITY) \
     F(TOXIC) \
     F(HAIL) \
-    F(BULK_UP) \
+    F(AIR_SLASH) \
     F(BULLET_SEED) \
     F(HIDDEN_POWER) \
-    F(SUNNY_DAY) \
+    F(ACROBATICS) \
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
     F(HYPER_BEAM) \
     F(LIGHT_SCREEN) \
-    F(PROTECT) \
-    F(RAIN_DANCE) \
+    F(STRUGGLE_BUG) \
+    F(PSYBEAM) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
     F(FRUSTRATION) \
@@ -38,7 +38,7 @@
     F(SHOCK_WAVE) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
-    F(SANDSTORM) \
+    F(DISARMING_VOICE) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
@@ -51,7 +51,108 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(FIRE_FANG) \
+    F(THUNDER_FANG) \
+    F(ICE_FANG) \
+    F(ACID_SPRAY) \
+    F(TRAILBLAZE) \
+    F(POUNCE) \
+    F(CHILLING_WATER) \
+    F(CHARGE_BEAM) \
+    F(POISON_TAIL) \
+    F(BULLDOZE) \
+    F(HEX) \
+    F(METAL_CLAW) \
+    F(SWIFT) \
+    F(MAGICAL_LEAF) \
+    F(ICY_WIND) \
+    F(MUD_SHOT) \
+    F(DRAINING_KISS) \
+    F(FLAME_CHARGE) \
+    F(LOW_SWEEP) \
+    F(AIR_CUTTER) \
+    F(DRAGON_TAIL) \
+    F(VENOSHOCK) \
+    F(AVALANCHE) \
+    F(VOLT_SWITCH) \
+    F(SMART_STRIKE) \
+    F(PSYSHOCK) \
+    F(ZEN_HEADBUTT) \
+    F(U_TURN) \
+    F(SHADOW_CLAW) \
+    F(FOUL_PLAY) \
+    F(BODY_SLAM) \
+    F(FIRE_PUNCH) \
+    F(THUNDER_PUNCH) \
+    F(ICE_PUNCH) \
+    F(SEED_BOMB) \
+    F(ELECTRO_BALL) \
+    F(DRAIN_PUNCH) \
+    F(DAZZLING_GLEAM) \
+    F(GRASS_KNOT) \
+    F(THUNDER_WAVE) \
+    F(POISON_JAB) \
+    F(STOMPING_TANTRUM) \
+    F(ROCK_SLIDE) \
+    F(BODY_PRESS) \
+    F(SPIKES) \
+    F(TOXIC_SPIKES) \
+    F(STEALTH_ROCK) \
+    F(FLASH_CANNON) \
+    F(DARK_PULSE) \
+    F(LEECH_LIFE) \
+    F(IRON_HEAD) \
+    F(POWER_GEM) \
+    F(GUNK_SHOT) \
+    F(X_SCISSOR) \
+    F(DRILL_RUN) \
+    F(WILL_O_WISP) \
+    F(CRUNCH) \
+    F(LIQUIDATION) \
+    F(AURA_SPHERE) \
+    F(DRAGON_PULSE) \
+    F(HYPER_VOICE) \
+    F(HEAT_WAVE) \
+    F(ENERGY_BALL) \
+    F(HEAVY_SLAM) \
+    F(ICE_SPINNER) \
+    F(PLAY_ROUGH) \
+    F(POLLEN_PUFF) \
+    F(EARTH_POWER) \
+    F(REVERSAL) \
+    F(HYDRO_PUMP) \
+    F(WILD_CHARGE) \
+    F(STONE_EDGE) \
+    F(OUTRAGE) \
+    F(FOCUS_BLAST) \
+    F(LEAF_STORM) \
+    F(HURRICANE) \
+    F(BUG_BUZZ) \
+    F(SHADOW_PUNCH) \
+    F(FLARE_BLITZ) \
+    F(BRAVE_BIRD) \
+    F(CLOSE_COMBAT) \
+    F(DRACO_METEOR) \
+    F(STEEL_BEAM) \
+    F(SMACK_DOWN) \
+    F(GYRO_BALL) \
+    F(KNOCK_OFF) \
+    F(BUG_BITE) \
+    F(VACUUM_WAVE) \
+    F(LUNGE) \
+    F(HIGH_HORSEPOWER) \
+    F(ICICLE_SPEAR) \
+    F(SCALD) \
+    F(HEAT_CRASH) \
+    F(SOLAR_BLADE) \
+    F(WEATHER_BALL) \
+    F(GRASSY_GLIDE) \
+    F(BURNING_JEALOUSY) \
+    F(FLIP_TURN) \
+    F(DUAL_WINGBEAT) \
+    F(LASH_OUT) \
+    F(SCALE_SHOT)
 
 #define FOREACH_HM(F) \
     F(CUT) \

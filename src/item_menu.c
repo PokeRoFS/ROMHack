@@ -941,7 +941,12 @@ static void GetItemName(u8 *dest, u16 itemId)
         else
         {
             // Get TM number
-            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
+            if (itemId >= ITEM_TM50) {
+                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM50 + 50, STR_CONV_MODE_LEADING_ZEROS, 3);
+            }
+            else{
+                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
+            }
             StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
         }
         break;

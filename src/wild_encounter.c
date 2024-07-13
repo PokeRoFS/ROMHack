@@ -940,8 +940,13 @@ u16 GetLocalWaterMon(void)
 bool8 UpdateRepelCounter(void)
 {
     u16 repelLureVar = VarGet(VAR_REPEL_STEP_COUNT);
+    u16 infCheck = VarGet(VAR_INF_REPEL_STEP_COUNT);
     u16 steps = REPEL_LURE_STEPS(repelLureVar);
     bool32 isLure = IS_LAST_USED_LURE(repelLureVar);
+
+    if(infCheck == 1) {
+        return FALSE;
+    }
 
     if (InBattlePike() || InBattlePyramid())
         return FALSE;
@@ -978,7 +983,7 @@ static bool8 IsWildLevelAllowedByRepel(u8 wildLevel)
 {
     u8 i;
 
-    if (!REPEL_STEP_COUNT)
+    if (!REPEL_STEP_COUNT && !FlagGet(FLAG_INF_REPEL))
         return TRUE;
 
     for (i = 0; i < PARTY_SIZE; i++)
