@@ -583,6 +583,47 @@ gStdScripts_End::
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 
+EventScript_ChooseMon::
+	msgbox Text_TutorWhichMon, MSGBOX_DEFAULT
+	end
+
+EventScript_ChooseMove::
+	msgbox Text_TeachWhichMove, MSGBOX_DEFAULT
+	special TeachMoveRelearnerMove
+	waitstate
+	goto_if_eq VAR_0x8004, 0, EventScript_ChooseMon
+	goto EventScript_Leave
+	end
+
+EventScript_NoMoveToTeachMon::
+	msgbox Text_DontHaveMoveToTeachPokemon, MSGBOX_DEFAULT
+	goto EventScript_ChooseMon
+	end
+
+EventScript_CantTeachEgg::
+	msgbox Text_CantTeachEgg, MSGBOX_DEFAULT
+	goto EventScript_ChooseMon
+	end
+
+EventScript_Leave::
+	releaseall
+	end
+
+Text_TutorWhichMon:
+	.string "Which POKéMON needs tutoring?$"
+
+Text_TeachWhichMove:
+	.string "Which move should be taught?$"
+
+Text_DontHaveMoveToTeachPokemon:
+	.string "Sorry…\p"
+	.string "It doesn't appear as if there is a move\n"
+	.string "to teach that POKéMON.$"
+
+Text_CantTeachEgg:
+	.string "Hunh? There isn't a single move to\n"
+	.string "teach to an EGG.$"
+
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	goto EventScript_ResetMrBriney
@@ -1072,5 +1113,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
-
 	.include "data/maps/InsideOfMemories/scripts.inc"

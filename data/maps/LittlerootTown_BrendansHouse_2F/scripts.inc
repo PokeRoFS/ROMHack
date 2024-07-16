@@ -276,7 +276,7 @@ PlayersHouse_2F_Text_ClockIsStopped:
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "MOTHER: {PLAYER}, thanks for setting\n"
-	.string "the clock?\p"
+	.string "the clock.\p"
 	.string "I'll be gone this weekend looking at\n"
 	.string "county courthouses with Mitzy.$"
 
@@ -308,7 +308,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_WakeUp::
 	end
 
 LittlerootTown_BrendansHouse_2F_DozedOff:
-	.string "Oh a dream... I must've dozed off.$"
+	.string "Oh, a dream... I must've dozed off.$"
 
 LittlerootTown_BrendansHouse_2F_ClocksOff:
 	.string "MOTHER: The clock up there is broken...\n"

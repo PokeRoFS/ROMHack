@@ -88,7 +88,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
       "x": 11,
-      "y": 10,
+      "y": 12,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -178,15 +178,6 @@
     },
     {
       "type": "trigger",
-      "x": 7,
-      "y": 9,
-      "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
-      "var_value": "3",
-      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4"
-    },
-    {
-      "type": "trigger",
       "x": 9,
       "y": 9,
       "elevation": 3,
@@ -229,6 +220,15 @@
       "var": "VAR_LITTLEROOT_TOWN_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "3",
+      "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4"
     }
   ],
   "bg_events": [

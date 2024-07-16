@@ -238,7 +238,7 @@ PlayersHouse_1F_Text_SeeYouHoney:
 	.string "MOTHER: See you later!$"
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
-	.string "MOTHER: Did you introduce yourself to\n"
+	.string "MOTHER: Did you see\n"
 	.string "MR. HARSHBARGER?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
@@ -250,7 +250,7 @@ PlayersHouse_1F_Text_TakeCareHoney:
 	.string "MOTHER: Take care!$"
 
 PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom:
-	.string "MOTHER: Oh? Did DAD give you that BADGE?\p"
+	.string "MOTHER: Oh? Did your DAD give you that BADGE?\p"
 	.string "Then here's something from your MOTHER!$"
 
 PlayersHouse_1F_Text_DontPushYourselfTooHard:
@@ -294,31 +294,26 @@ PlayersHouse_1F_Text_RunningShoesManual:
 	.string "the road running!”$"
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
-	.string "DAD: Hm?\p"
+	.string "WADDLES: Hm?\p"
 	.string "Hey, it's {PLAYER}!\p"
 	.string "It's been a while since I saw you,\n"
 	.string "but you look…stronger, somehow.\p"
-	.string "That's the impression I get.\n"
+	.string "I'm so proud of you.\n"
 	.string "But your old man hasn't given up yet!\p"
 	.string "Oh, yes, I have something for you.\n"
 	.string "This came to you from someone named\l"
 	.string "MR. BRINEY.$"
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
-	.string "DAD: Hm, a TICKET for a ferry?\p"
+	.string "WADDLES: Hm, a TICKET for a ferry?\p"
 	.string "If I recall, there are ferry ports in\n"
 	.string "SLATEPORT and LILYCOVE.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym:
-	.string "I'd better get back to PETALBURG GYM.\p"
-	.string "MOM, thanks for looking after the house\n"
-	.string "while I'm away.$"
+	.string "I'd better get back to PETALBURG GYM.$"
 
 PlayersHouse_1F_Text_DadShouldStayLonger:
-	.string "MOTHER: That DAD of yours…\p"
-	.string "He comes home for the first time in a\n"
-	.string "while, but all he talks about is POKéMON.\p"
-	.string "He should relax and stay a little longer.$"
+	.string "MOTHER: That DAD of yours…$"
 
 PlayersHouse_1F_Text_IsThatABreakingStory:
 	.string "MOTHER: Is that a breaking news story?$"

@@ -561,56 +561,44 @@ LittlerootTown_EventScript_MomReturnHome0::
 	return
 
 LittlerootTown_EventScript_MomReturnHome1::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_LookLeft
+	waitmovement 0
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHome1
 	waitmovement 0
 	return
 
+Common_Movement_WalkRight:
+	walk_right
+	step_end
+
+Common_Movement_LookLeft:
+	face_left
+	step_end
+
 LittlerootTown_EventScript_MomReturnHomeMale2::
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale2
 	waitmovement 0
-	opendoor VAR_0x8009, VAR_0x800A
-	waitdooranim
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
-	waitmovement 0
 	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
-	closedoor VAR_0x8009, VAR_0x800A
-	waitdooranim
 	return
 
 LittlerootTown_EventScript_MomReturnHomeMale3::
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale3
 	waitmovement 0
-	opendoor VAR_0x8009, VAR_0x800A
-	waitdooranim
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
-	waitmovement 0
 	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
-	closedoor VAR_0x8009, VAR_0x800A
-	waitdooranim
 	return
 
 LittlerootTown_EventScript_MomReturnHomeMale4::
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale4
 	waitmovement 0
-	opendoor VAR_0x8009, VAR_0x800A
-	waitdooranim
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
-	waitmovement 0
 	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
-	closedoor VAR_0x8009, VAR_0x800A
-	waitdooranim
 	return
 
 LittlerootTown_EventScript_MomReturnHomeMale5::
 	applymovement LOCALID_MOM, LittlerootTown_Movement_MomReturnHomeMale5
 	waitmovement 0
-	opendoor VAR_0x8009, VAR_0x800A
-	waitdooranim
-	applymovement LOCALID_MOM, LittlerootTown_Movement_MomExitThroughDoor
-	waitmovement 0
 	hideobjectat LOCALID_MOM, MAP_LITTLEROOT_TOWN
-	closedoor VAR_0x8009, VAR_0x800A
-	waitdooranim
 	return
 
 LittlerootTown_EventScript_MomReturnHomeFemale2::
@@ -684,9 +672,11 @@ LittlerootTown_Movement_MomApproachPlayerMale2:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 LittlerootTown_Movement_MomApproachPlayerMale3:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -697,9 +687,11 @@ LittlerootTown_Movement_MomApproachPlayerMale3:
 LittlerootTown_Movement_MomApproachPlayerMale4:
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 LittlerootTown_Movement_MomApproachPlayerMale5:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -732,49 +724,76 @@ LittlerootTown_Movement_MomApproachPlayerFemale5:
 	step_end
 
 LittlerootTown_Movement_MomReturnHome0:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHome1:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHomeMale2:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_faster_up
+	walk_up
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHomeMale3:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_faster_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHomeMale4:
-	walk_left
-	walk_left
-	walk_in_place_faster_up
+	walk_down
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHomeMale5:
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_faster_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 LittlerootTown_Movement_MomReturnHomeFemale2:
@@ -854,11 +873,11 @@ LittlerootTown_Text_WaitPlayer:
 	.string "MOTHER: Wait, {PLAYER}!$"
 
 LittlerootTown_Text_WearTheseRunningShoes:
-	.string "MOTHER: {PLAYER}! {PLAYER}! Did you\n"
+	.string "MOTHER: {PLAYER}! Did you\n"
 	.string "see MR. HARSHBARGER? He asked for you.\p"
 	.string "If you're going out on an\n"
 	.string "adventure, wear these RUNNING SHOES.\p"
-	.string "They'll autmagically put a zip in your\n"
+	.string "They'll automagically put a zip in your\n"
 	.string "step!$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
@@ -876,8 +895,6 @@ LittlerootTown_Text_ExplainRunningShoes:
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
-	.string "To think that you have your very own\n"
-	.string "POKéMON now…\l"
 	.string "Be safe out there!$"
 
 LittlerootTown_Text_CanUsePCToStoreItems:

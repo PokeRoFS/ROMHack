@@ -23,6 +23,7 @@
 #include "load_save.h"
 #include "main.h"
 #include "menu.h"
+#include "move_relearner.h"
 #include "new_game.h"
 #include "option_menu.h"
 #include "overworld.h"
@@ -56,6 +57,7 @@ enum
     MENU_ACTION_BAG,
     MENU_ACTION_POKEVIAL,
     MENU_ACTION_POKEPC,
+    MENU_ACTION_RELEARN,
     MENU_ACTION_POKENAV,
     MENU_ACTION_PLAYER,
     MENU_ACTION_SAVE,
@@ -100,6 +102,7 @@ static bool8 StartMenuPokemonCallback(void);
 static bool8 StartMenuBagCallback(void);
 static bool8 StartMenuPokeVialCallback(void);
 static bool8 StartMenuPokePCCallback(void);
+static bool8 StartMenuRelearnCallback(void);
 static bool8 StartMenuPokeNavCallback(void);
 static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
@@ -194,7 +197,8 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_POKEMON]         = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
     [MENU_ACTION_BAG]             = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
     [MENU_ACTION_POKEVIAL]        = {gText_MenuPokeVial, {.u8_void = StartMenuPokeVialCallback}},
-    [MENU_ACTION_POKEPC]          = {gText_MenuPokePC, {.u8_void = StartMenuPokePCCallback}},
+    [MENU_ACTION_POKEPC]          = {gText_MenuPokePC,  {.u8_void = StartMenuPokePCCallback}},
+    [MENU_ACTION_RELEARN]         = {gText_MenuRelearn, {.u8_void = StartMenuRelearnCallback}},
     [MENU_ACTION_POKENAV]         = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
     [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
@@ -346,6 +350,7 @@ static void BuildNormalStartMenu(void)
     {
         AddStartMenuAction(MENU_ACTION_POKEVIAL);
         AddStartMenuAction(MENU_ACTION_POKEPC);
+        AddStartMenuAction(MENU_ACTION_RELEARN);
     }
 
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
@@ -371,6 +376,7 @@ static void BuildDebugStartMenu(void)
     {
         AddStartMenuAction(MENU_ACTION_POKEVIAL);
         AddStartMenuAction(MENU_ACTION_POKEPC);
+        AddStartMenuAction(MENU_ACTION_RELEARN);
     }
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
@@ -384,8 +390,8 @@ static void BuildSafariZoneStartMenu(void)
     AddStartMenuAction(MENU_ACTION_RETIRE_SAFARI);
     AddStartMenuAction(MENU_ACTION_POKEDEX);
     AddStartMenuAction(MENU_ACTION_POKEMON);
-    AddStartMenuAction(MENU_ACTION_POKEVIAL);
     AddStartMenuAction(MENU_ACTION_POKEPC);
+    AddStartMenuAction(MENU_ACTION_RELEARN);
     AddStartMenuAction(MENU_ACTION_BAG);
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
@@ -665,7 +671,8 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback
-            && gMenuCallback != StartMenuPokeVialCallback)
+            && gMenuCallback != StartMenuPokeVialCallback
+            && gMenuCallback != StartMenuRelearnCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -757,6 +764,21 @@ static bool8 StartMenuPokePCCallback(void)
         LockPlayerFieldControls();
         FreeAllOverworldWindowBuffers();
         RunTasks();
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuRelearnCallback(void) {
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        LockPlayerFieldControls();
+        FreeAllOverworldWindowBuffers();
 
         return TRUE;
     }
