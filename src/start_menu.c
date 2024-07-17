@@ -721,6 +721,20 @@ static bool8 StartMenuPokemonCallback(void)
     return FALSE;
 }
 
+static bool8 StartMenuRelearnCallback(void) {
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_RelearnerMenuFromStartMenu); // Display party menu
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 static bool8 StartMenuBagCallback(void)
 {
     if (!gPaletteFade.active)
@@ -764,21 +778,6 @@ static bool8 StartMenuPokePCCallback(void)
         LockPlayerFieldControls();
         FreeAllOverworldWindowBuffers();
         RunTasks();
-
-        return TRUE;
-    }
-
-    return FALSE;
-}
-
-static bool8 StartMenuRelearnCallback(void) {
-    if (!gPaletteFade.active)
-    {
-        PlayRainStoppingSoundEffect();
-        RemoveExtraStartMenuWindows();
-        CleanupOverworldWindowsAndTilemaps();
-        LockPlayerFieldControls();
-        FreeAllOverworldWindowBuffers();
 
         return TRUE;
     }

@@ -40,6 +40,7 @@
 #include "menu_helpers.h"
 #include "menu_specialized.h"
 #include "metatile_behavior.h"
+#include "move_relearner.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -6758,6 +6759,11 @@ void CB2_PartyMenuFromStartMenu(void)
     InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
 }
 
+void CB2_RelearnerMenuFromStartMenu(void)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_MOVE_RELEARNER, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ChooseMonForMoveRelearner);
+}
+
 // Giving an item by selecting Give from the bag menu
 // As opposted to by selecting Give in the party menu, which is handled by CursorCb_Give
 void CB2_ChooseMonToGiveItem(void)
@@ -7705,7 +7711,7 @@ static void CB2_ChooseMonForMoveRelearner(void)
     else
         gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(&gPlayerParty[gSpecialVar_0x8004]);
     gFieldCallback2 = CB2_FadeFromPartyMenu;
-    SetMainCallback2(CB2_ReturnToField);
+    SetMainCallback2(CB2_InitLearnMove);
 }
 
 void DoBattlePyramidMonsHaveHeldItem(void)
