@@ -299,6 +299,7 @@ PlayersHouse_2F_Text_ItsAGameCube:
 
 LittlerootTown_BrendansHouse_2F_EventScript_WakeUp::
 	lock
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE
 	msgbox LittlerootTown_BrendansHouse_2F_DozedOff, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_LITTLEROOT_RIVAL_STATE, 3

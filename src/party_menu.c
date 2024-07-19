@@ -5813,6 +5813,12 @@ static void CB2_ReturnToPartyMenuUsingRareCandy(void)
     SetMainCallback2(CB2_ShowPartyMenuForItemUse);
 }
 
+static void CB2_ReturnToPartyMenuUsingInfCandy(void)
+{
+    gItemUseCB = ItemUseCB_InfCandy;
+    SetMainCallback2(CB2_ShowPartyMenuForItemUse);
+}
+
 static void PartyMenuTryEvolution(u8 taskId)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -5825,8 +5831,10 @@ static void PartyMenuTryEvolution(u8 taskId)
     if (targetSpecies != SPECIES_NONE)
     {
         FreePartyPointers();
-        if ((ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy || ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_InfCandy) && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+        if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
             gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
+        else if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_InfCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+            gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingInfCandy;
         else
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
         BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
@@ -6761,7 +6769,7 @@ void CB2_PartyMenuFromStartMenu(void)
 
 void CB2_RelearnerMenuFromStartMenu(void)
 {
-    InitPartyMenu(PARTY_MENU_TYPE_MOVE_RELEARNER, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ChooseMonForMoveRelearner);
+    InitPartyMenu(PARTY_MENU_TYPE_MOVE_RELEARNER, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, FALSE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
 }
 
 // Giving an item by selecting Give from the bag menu

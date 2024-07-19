@@ -68,23 +68,19 @@ PetalburgCity_WallysHouse_EventScript_ReceivedHMSurf::
 	end
 
 PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally:
-	.string "You're…\n"
-	.string "Ah, you must be {PLAYER}{KUN}, right?\p"
-	.string "Thank you for playing with WALLY a\n"
+	.string "JEFF: {PLAYER}{KUN}!\p"
+	.string "Thank you for helping TRUEMAN a\n"
 	.string "little while ago.\p"
-	.string "He's been frail and sickly ever\n"
-	.string "since he was a baby.\p"
-	.string "We've sent him to stay with my relatives\n"
+	.string "He's been spending way too much\n"
+	.string "time on his IPad recently.\p"
+	.string "He's currently staying with grandma\n"
 	.string "in VERDANTURF TOWN for a while.\p"
-	.string "The air is a lot cleaner there\n"
-	.string "than it is here.\p"
-	.string "What's that? Where's WALLY?\n"
-	.string "He's already left, our WALLY.\p"
+	.string "He's already left.\p"
 	.string "I wonder where he could have\n"
 	.string "gotten by now?$"
 
 PetalburgCity_WallysHouse_Text_WonderHowWallyIsDoing:
-	.string "I wonder how our WALLY is doing?$"
+	.string "I wonder how TRUEMAN is doing?$"
 
 PetalburgCity_WallysHouse_Text_PleaseExcuseUs:
 	.string "{PLAYER}{KUN}! Please excuse us for\n"
@@ -108,7 +104,7 @@ PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces:
 	.string "able to go to all sorts of places.$"
 
 PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
-	.string "WALLY's coming home soon.\n"
+	.string "TRUEMAN's coming home soon.\n"
 	.string "I'm looking forward to that.$"
 
 PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
@@ -120,7 +116,7 @@ PetalburgCity_WallysHouse_Text_YouMetWallyInEverGrandeCity:
 	.string "that all by himself.$"
 
 PetalburgCity_WallysHouse_Text_WallyWasReallyHappy:
-	.string "WALLY was really happy when he told\n"
+	.string "DARA: TRUEMAN was really happy when he told\n"
 	.string "us that he caught a POKéMON.\p"
 	.string "It's been ages since I've seen him\n"
 	.string "smile like that.$"

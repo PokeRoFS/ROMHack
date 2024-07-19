@@ -26,58 +26,6 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 18,
-      "y": 11,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_LittleBoy",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 33,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Calvin",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 25,
-      "y": 15,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route102_EventScript_Rick",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 8,
-      "y": 7,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Tiana",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 37,
       "y": 4,
@@ -130,21 +78,55 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 19,
-      "y": 4,
+      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
+      "x": 43,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_BROTHER_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 18,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Allen",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102_EventScript_LittleBoy",
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_ROUTE102_STATE",
+      "var_value": "0",
+      "script": "Route102_EventScript_TriggerBrother2"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_ROUTE102_STATE",
+      "var_value": "0",
+      "script": "Route102_EventScript_TriggerBrother1"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

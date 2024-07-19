@@ -1,3 +1,11 @@
+Route102_Text_Brother1Defeated:
+	.string "Wow... that Eevee of yours\n"
+	.string "is really strong!$"
+
+Route102_Text_Brother1PostBattle:
+	.string "Well... I'm off to start the gym challenge.\n"
+	.string "I'll see you along the way?$"
+
 Route102_Text_CalvinIntro:
 	.string "If you have POKéMON with you, then\n"
 	.string "you're an official POKéMON TRAINER!\l"

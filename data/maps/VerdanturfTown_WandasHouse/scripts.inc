@@ -83,7 +83,7 @@ VerdanturfTown_WandasHouse_EventScript_WallysAuntEverGrande::
 	end
 
 VerdanturfTown_WandasHouse_Text_StrongerSpeech:
-	.string "WALLY: I lost to you, {PLAYER}, but I'm\n"
+	.string "TRUEMAN: I lost to you, {PLAYER}, but I'm\n"
 	.string "not feeling down anymore.\p"
 	.string "Because I have a new purpose in life.\n"
 	.string "Together with my RALTS, I'm going\l"
@@ -95,14 +95,14 @@ VerdanturfTown_WandasHouse_Text_StrongerSpeech:
 	.string "to another battle.$"
 
 VerdanturfTown_WandasHouse_Text_StrongerSpeechShort:
-	.string "WALLY: Please watch me, {PLAYER}.\n"
+	.string "TRUEMAN: Please watch me, {PLAYER}.\n"
 	.string "I'm going to get stronger than you.\p"
 	.string "When I do, I'm going to challenge you\n"
 	.string "to another battle.$"
 
 VerdanturfTown_WandasHouse_Text_WallysNextDoor:
 	.string "UNCLE: Oh! {PLAYER}{KUN}!\n"
-	.string "WALLY's next door.\p"
+	.string "TRUEMAN's next door.\p"
 	.string "But, boy, there's something I have to\n"
 	.string "tell you.\p"
 	.string "This natural environment is doing\n"
@@ -112,12 +112,12 @@ VerdanturfTown_WandasHouse_Text_WallysNextDoor:
 	.string "the boy hope.$"
 
 VerdanturfTown_WandasHouse_Text_WallySlippedOff:
-	.string "WALLY's gone away…\n"
+	.string "TRUEMAN's gone away…\n"
 	.string "He slipped off on his own…$"
 
 VerdanturfTown_WandasHouse_Text_WallyGoneThatFar:
 	.string "UNCLE: Is that right?\n"
-	.string "WALLY's gone away that far all by\l"
+	.string "TRUEMAN's gone away that far all by\l"
 	.string "himself…\p"
 	.string "Well, I have to give him credit--he is\n"
 	.string "my little brother's son.$"
@@ -162,7 +162,7 @@ VerdanturfTown_WandasHouse_Text_IfAnythingHappenedToWally:
 	.string "parents in PETALBURG in the eye…$"
 
 VerdanturfTown_WandasHouse_Text_WallyWasInEverGrande:
-	.string "WALLY was in EVER GRANDE?\p"
+	.string "TRUEMAN was in EVER GRANDE?\p"
 	.string "His parents in PETALBURG would be\n"
 	.string "astonished to hear that!$"
 

@@ -353,15 +353,15 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_RELEARN);
     }
 
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
-    {
-        AddStartMenuAction(MENU_ACTION_POKENAV);
-    }
+    // if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+    // {
+    //     AddStartMenuAction(MENU_ACTION_POKENAV);
+    // }
 
-    AddStartMenuAction(MENU_ACTION_PLAYER);
+    // AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    AddStartMenuAction(MENU_ACTION_EXIT);
+    // AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
 static void BuildDebugStartMenu(void)
@@ -380,7 +380,7 @@ static void BuildDebugStartMenu(void)
     }
     if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKENAV);
-    AddStartMenuAction(MENU_ACTION_PLAYER);
+    // AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
 }
@@ -393,9 +393,9 @@ static void BuildSafariZoneStartMenu(void)
     AddStartMenuAction(MENU_ACTION_POKEPC);
     AddStartMenuAction(MENU_ACTION_RELEARN);
     AddStartMenuAction(MENU_ACTION_BAG);
-    AddStartMenuAction(MENU_ACTION_PLAYER);
+    // AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_OPTION);
-    AddStartMenuAction(MENU_ACTION_EXIT);
+    // AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
 static void BuildLinkModeStartMenu(void)
